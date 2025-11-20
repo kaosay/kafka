@@ -68,9 +68,18 @@ kafka-topics --create \
 kafka-console-producer \
   --topic test1 \
   --bootstrap-server 10.0.0.161:29092
+# type hello kafka then press ctl+c
 ```
 
 - customer
+```
+# 消费消息（另开终端）
+kafka-console-consumer \
+  --topic test1 \
+  --from-beginning \
+  --bootstrap-server 10.0.0.161:29092
+```
+
 ```
 # 消费消息（另开终端）
 docker exec -it kafka kafka-console-consumer \
