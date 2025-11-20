@@ -1,6 +1,7 @@
 # kafka
 How to use and install kafka
 
+[kafka documentation](https://kafka.apache.org/documentation/)
 
 ## 1 Deployment with dokcer compose
 ```
