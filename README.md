@@ -50,14 +50,14 @@ docker exec -it kafka bash
 - list all topics
 ```
 kafka-topics --list \
-  --bootstrap-server 10.0.0.161:29092
+  --bootstrap-server 10.0.0.16:29092
 ```
 
 - create topics
 ```
 kafka-topics --create \
   --topic test1 \
-  --bootstrap-server 10.0.0.161:29092 \
+  --bootstrap-server 10.0.0.16:29092 \
   --partitions 3 \
   --replication-factor 1
 ```
@@ -67,8 +67,8 @@ kafka-topics --create \
 # 生产消息
 kafka-console-producer \
   --topic test1 \
-  --bootstrap-server 10.0.0.161:29092
-# type hello kafka then press ctl+c \n
+  --bootstrap-server 10.0.0.16:29092
+# type hello kafka then press ctl+c
 ```
 
 - customer
@@ -77,7 +77,7 @@ kafka-console-producer \
 kafka-console-consumer \
   --topic test1 \
   --from-beginning \
-  --bootstrap-server 10.0.0.161:29092
+  --bootstrap-server 10.0.0.16:29092
 ```
 
 ```
@@ -85,7 +85,7 @@ kafka-console-consumer \
 docker exec -it kafka kafka-console-consumer \
   --topic test1 \
   --from-beginning \
-  --bootstrap-server 10.0.0.161:29092
+  --bootstrap-server 10.0.0.16:29092
 ```
 
 
