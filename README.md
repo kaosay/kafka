@@ -47,30 +47,36 @@ services:
 docker exec -it kafka bash
 ```
 
+- list all topics
+```
+kafka-topics --list \
+  --bootstrap-server 10.0.0.161:29092
+```
+
+- create topics
 ```
 kafka-topics --create \
-  --topic test2 \
-  --bootstrap-server 10.0.0.16:29092 \
+  --topic test1 \
+  --bootstrap-server 10.0.0.161:29092 \
   --partitions 3 \
   --replication-factor 1
 ```
 
+- producer
 ```
 # 生产消息
 kafka-console-producer \
-  --topic test2 \
-  --bootstrap-server 10.0.0.16:29092
+  --topic test1 \
+  --bootstrap-server 10.0.0.161:29092
 ```
 
-
-
-
+- customer
 ```
 # 消费消息（另开终端）
 docker exec -it kafka kafka-console-consumer \
-  --topic test2 \
+  --topic test1 \
   --from-beginning \
-  --bootstrap-server 10.0.0.16:29092
+  --bootstrap-server 10.0.0.161:29092
 ```
 
 
