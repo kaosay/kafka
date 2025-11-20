@@ -68,7 +68,7 @@ kafka-topics --create \
 kafka-console-producer \
   --topic test1 \
   --bootstrap-server 10.0.0.161:29092
-# type hello kafka then press ctl+c
+# type hello kafka then press ctl+c \n
 ```
 
 - customer
