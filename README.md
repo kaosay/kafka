@@ -63,16 +63,16 @@ kafka-topics --create \
   --replication-factor 1
 ```
 
-- producer
+- **producer**
 ```
-# 生产消息
+# **生产消息**
 kafka-console-producer \
   --topic test1 \
   --bootstrap-server 10.0.0.16:29092
 # type hello kafka then press ctl+c
 ```
 
-- customer
+- *customer*
 ```
 # 消费消息（另开终端）
 kafka-console-consumer \
@@ -82,7 +82,7 @@ kafka-console-consumer \
 ```
 
 ```
-# 消费消息（另开终端）
+# *消费消息（另开终端）*
 docker exec -it kafka kafka-console-consumer \
   --topic test1 \
   --from-beginning \
