@@ -2,7 +2,7 @@
 How to use and install kafka
 
 
-## - Deployment with dokcer compose
+## 1 Deployment with dokcer compose
 ```
 version: '3.8'
 
@@ -41,3 +41,18 @@ services:
       timeout: 5s
       retries: 5
 ```
+
+## 2 Test kafka in docker container
+```
+docker exec -it kafka bash
+```
+
+```
+kafka-topics --create \
+  --topic test2 \
+  --bootstrap-server 10.0.0.16:29092 \
+  --partitions 3 \
+  --replication-factor 1
+```
+
+
