@@ -55,4 +55,23 @@ kafka-topics --create \
   --replication-factor 1
 ```
 
+```
+# 生产消息
+kafka-console-producer \
+  --topic test2 \
+  --bootstrap-server 10.0.0.16:29092
+```
+
+
+
+
+```
+# 消费消息（另开终端）
+docker exec -it kafka kafka-console-consumer \
+  --topic test2 \
+  --from-beginning \
+  --bootstrap-server 10.0.0.16:29092
+```
+
+
 
