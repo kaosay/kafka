@@ -3,6 +3,22 @@ How to use and install kafka
 
 [kafka documentation](https://kafka.apache.org/documentation/)
 
+## How to install kafka in eks by strimzi operator
+https://strimzi.io/quickstarts/
+
+```
+kubectl create namespace kafka
+
+kubectl create -f 'https://strimzi.io/install/latest?namespace=kafka' -n kafka
+
+kubectl get pod -n kafka --watch
+
+# Send and receive messages
+kubectl -n kafka run kafka-producer -ti --image=quay.io/strimzi/kafka:0.49.1-kafka-4.1.1 --rm=true --restart=Never -- bin/kafka-console-producer.sh --bootstrap-server my-cluster-kafka-bootstrap:9092 --topic my-topic
+
+kubectl -n kafka run kafka-consumer -ti --image=quay.io/strimzi/kafka:0.49.1-kafka-4.1.1 --rm=true --restart=Never -- bin/kafka-console-consumer.sh --bootstrap-server my-cluster-kafka-bootstrap:9092 --topic my-topic --from-beginning
+```
+
 ## 1 Deployment with dokcer compose
 ```
 version: '3.8'
